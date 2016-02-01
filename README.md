@@ -32,4 +32,8 @@ Get the SHA-1 of the commit...
 
 And then pass to program:
 
-    $ go build -ldflags "-X main.Build [the_build_id]" example.go
+    $ go build -ldflags "-X main.Build [the_build_id]" program.go
+
+Or *inlining* the command execution:
+
+    $ go run -ldflags "-X main.Build `git rev-parse HEAD`" program.go
