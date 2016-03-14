@@ -1,14 +1,14 @@
 language: go
 
 env:
-  - CGO_ENABLED=0
+  #- CGO_ENABLED=0
   - GOOS=linux
 
 go:
-  - 1.3
-  - 1.4
+  #- 1.3
+  #- 1.4
   - 1.5
-  - trip
+  #- trip
 
 gobuild_args: >
   -x -race -tags ci 
