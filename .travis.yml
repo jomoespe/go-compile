@@ -9,7 +9,7 @@ go:
   #- 1.5
   - tip
 
-gobuild_args: -x -race -tags ci -a -installsuffix cgo -ldflags "-s -w -X 'main.version=$(cat VERSION)' -X 'main.build=$(git rev-parse --short HEAD)' -X 'main.buildDate=$(date --rfc-3339=seconds)'"
+#gobuild_args: -x -race -tags ci -a -installsuffix cgo -ldflags "-s -w -X 'main.version=$(cat VERSION)' -X 'main.build=$(git rev-parse --short HEAD)' -X 'main.buildDate=$(date --rfc-3339=seconds)'"
 
 before_script:
   - go vet ./...
