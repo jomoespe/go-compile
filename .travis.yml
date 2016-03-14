@@ -1,19 +1,16 @@
 language: go
 
 env:
-  #- CGO_ENABLED=0
-  - GOOS=linux
+  - CGO_ENABLED=0 GOOS=linux
 
 go:
   #- 1.3
   #- 1.4
-  - 1.5
-  #- trip
+  #- 1.5
+  - tip
 
-#gobuild_args: >
-#  -x -race -tags ci 
-#  -a -installsuffix cgo 
-#  -ldflags "-s -w -X 'main.version=$(cat VERSION)' -X 'main.build=$(git rev-parse --short HEAD)' -X 'main.buildDate=$(date --rfc-3339=seconds)'"
+#gobuild_args: -x -race -tags ci -a -installsuffix cgo -ldflags "-s -w -X 'main.version=$(cat VERSION)' -X 'main.build=$(git rev-parse --short HEAD)' -X 'main.buildDate=$(date --rfc-3339=seconds)'"
+gobuild_args: -x -race -ldflags "-s -w -X 'main.version=$(cat VERSION)' -X 'main.build=$(git rev-parse --short HEAD)' -X 'main.buildDate=$(date --rfc-3339=seconds)'"
 
-before_script:
-  - go vet ./...
+#before_script:
+#  - go vet ./...
