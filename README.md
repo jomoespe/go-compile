@@ -115,6 +115,11 @@ A go binary will need some runtime dependencies (shared libraries) in target exe
     $ CGO_ENABLED=0 GOOS=<target_platform> go build [arguments] -a -installsuffix cgo <source_files>
 
 
+To build the current package/project for Linux, for example:
+
+    $ CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo
+
+
 In our example, applying all previous optimizations:
 
     # for Linux
